@@ -7,15 +7,19 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		862D9EBD24032F5A000084B7 /* ResultView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 862D9EBC24032F5A000084B7 /* ResultView.swift */; };
 		863C424D240178E0006A624A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 863C424C240178E0006A624A /* AppDelegate.swift */; };
 		863C424F240178E0006A624A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 863C424E240178E0006A624A /* SceneDelegate.swift */; };
 		863C4251240178E0006A624A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 863C4250240178E0006A624A /* ViewController.swift */; };
 		863C4254240178E0006A624A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 863C4252240178E0006A624A /* Main.storyboard */; };
 		863C4256240178E6006A624A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 863C4255240178E6006A624A /* Assets.xcassets */; };
 		863C4259240178E6006A624A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 863C4257240178E6006A624A /* LaunchScreen.storyboard */; };
+		863C4262240179DA006A624A /* KeyButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 863C4261240179DA006A624A /* KeyButton.swift */; };
+		863C426424017DAB006A624A /* Numpad.swift in Sources */ = {isa = PBXBuildFile; fileRef = 863C426324017DAB006A624A /* Numpad.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		862D9EBC24032F5A000084B7 /* ResultView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultView.swift; sourceTree = "<group>"; };
 		863C4249240178E0006A624A /* Simple Calculator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Simple Calculator.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		863C424C240178E0006A624A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		863C424E240178E0006A624A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -24,6 +28,8 @@
 		863C4255240178E6006A624A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		863C4258240178E6006A624A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		863C425A240178E6006A624A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		863C4261240179DA006A624A /* KeyButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyButton.swift; sourceTree = "<group>"; };
+		863C426324017DAB006A624A /* Numpad.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Numpad.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +62,7 @@
 		863C424B240178E0006A624A /* Simple Calculator */ = {
 			isa = PBXGroup;
 			children = (
+				863C42602401798A006A624A /* Components */,
 				863C424C240178E0006A624A /* AppDelegate.swift */,
 				863C424E240178E0006A624A /* SceneDelegate.swift */,
 				863C4250240178E0006A624A /* ViewController.swift */,
@@ -65,6 +72,16 @@
 				863C425A240178E6006A624A /* Info.plist */,
 			);
 			path = "Simple Calculator";
+			sourceTree = "<group>";
+		};
+		863C42602401798A006A624A /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				863C4261240179DA006A624A /* KeyButton.swift */,
+				863C426324017DAB006A624A /* Numpad.swift */,
+				862D9EBC24032F5A000084B7 /* ResultView.swift */,
+			);
+			path = Components;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -140,7 +157,10 @@
 			files = (
 				863C4251240178E0006A624A /* ViewController.swift in Sources */,
 				863C424D240178E0006A624A /* AppDelegate.swift in Sources */,
+				863C426424017DAB006A624A /* Numpad.swift in Sources */,
 				863C424F240178E0006A624A /* SceneDelegate.swift in Sources */,
+				863C4262240179DA006A624A /* KeyButton.swift in Sources */,
+				862D9EBD24032F5A000084B7 /* ResultView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

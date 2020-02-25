@@ -8,6 +8,12 @@
 
 import UIKit
 
+protocol NumpadDelegate {
+    func chooseNumber(number: String)
+    func calculate()
+    func clear()
+}
+
 class Numpad: UIView {
     var buttonClear: KeyButton!
     var buttonSummation: KeyButton!
@@ -28,6 +34,8 @@ class Numpad: UIView {
     var button8: KeyButton!
     var button9: KeyButton!
     var buttonDot: KeyButton!
+    
+    var delegate: NumpadDelegate?
     
     init() {
         super.init(frame: .zero)
@@ -58,6 +66,26 @@ class Numpad: UIView {
         button8 = KeyButton(frame: .zero, color: .primary, text: "8")
         button9 = KeyButton(frame: .zero, color: .primary, text: "9")
         buttonDot = KeyButton(frame: .zero, color: .primary, text: ".")
+        
+        buttonClear.addTarget(self, action: #selector(handleButtonTouch(sender:)), for: .touchUpInside)
+        buttonSummation.addTarget(self, action: #selector(handleButtonTouch(sender:)), for: .touchUpInside)
+        buttonPercent.addTarget(self, action: #selector(handleButtonTouch(sender:)), for: .touchUpInside)
+        buttonDivide.addTarget(self, action: #selector(handleButtonTouch(sender:)), for: .touchUpInside)
+        buttonMultiply.addTarget(self, action: #selector(handleButtonTouch(sender:)), for: .touchUpInside)
+        buttonMinus.addTarget(self, action: #selector(handleButtonTouch(sender:)), for: .touchUpInside)
+        buttonPlus.addTarget(self, action: #selector(handleButtonTouch(sender:)), for: .touchUpInside)
+        buttonResult.addTarget(self, action: #selector(handleButtonTouch(sender:)), for: .touchUpInside)
+        button0.addTarget(self, action: #selector(handleButtonTouch(sender:)), for: .touchUpInside)
+        button1.addTarget(self, action: #selector(handleButtonTouch(sender:)), for: .touchUpInside)
+        button2.addTarget(self, action: #selector(handleButtonTouch(sender:)), for: .touchUpInside)
+        button3.addTarget(self, action: #selector(handleButtonTouch(sender:)), for: .touchUpInside)
+        button4.addTarget(self, action: #selector(handleButtonTouch(sender:)), for: .touchUpInside)
+        button5.addTarget(self, action: #selector(handleButtonTouch(sender:)), for: .touchUpInside)
+        button6.addTarget(self, action: #selector(handleButtonTouch(sender:)), for: .touchUpInside)
+        button7.addTarget(self, action: #selector(handleButtonTouch(sender:)), for: .touchUpInside)
+        button8.addTarget(self, action: #selector(handleButtonTouch(sender:)), for: .touchUpInside)
+        button9.addTarget(self, action: #selector(handleButtonTouch(sender:)), for: .touchUpInside)
+        buttonDot.addTarget(self, action: #selector(handleButtonTouch(sender:)), for: .touchUpInside)
         
         self.addSubviews(views: [buttonClear, buttonSummation, buttonPercent, buttonDivide, buttonMultiply, buttonMinus, buttonPlus, buttonResult])
         
@@ -220,6 +248,49 @@ class Numpad: UIView {
             buttonClear.bottomAnchor.constraint(equalTo: button7.topAnchor, constant: -spacing)
         ])
 
+    }
+    
+    @objc func handleButtonTouch(sender: UIButton) {
+        switch sender {
+        case button0:
+            delegate?.chooseNumber(number: "0")
+        case button1:
+            delegate?.chooseNumber(number: "1")
+        case button2:
+            delegate?.chooseNumber(number: "2")
+        case button3:
+            delegate?.chooseNumber(number: "3")
+        case button4:
+            delegate?.chooseNumber(number: "4")
+        case button5:
+            delegate?.chooseNumber(number: "5")
+        case button6:
+            delegate?.chooseNumber(number: "6")
+        case button7:
+            delegate?.chooseNumber(number: "7")
+        case button8:
+            delegate?.chooseNumber(number: "8")
+        case button9:
+            delegate?.chooseNumber(number: "9")
+        case buttonDot:
+            delegate?.chooseNumber(number: ".")
+        case buttonPlus:
+            delegate?.chooseNumber(number: "+")
+        case buttonMinus:
+            delegate?.chooseNumber(number: "-")
+        case buttonMultiply:
+            delegate?.chooseNumber(number: "*")
+        case buttonDivide:
+            delegate?.chooseNumber(number: "/")
+        case buttonPercent:
+            delegate?.chooseNumber(number: "%")
+        case buttonSummation:
+            delegate?.chooseNumber(number: "+")
+        case buttonClear:
+            delegate?.clear()
+        default:
+            delegate?.calculate()
+        }
     }
     
     required init?(coder: NSCoder) {

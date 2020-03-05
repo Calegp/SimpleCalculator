@@ -61,7 +61,11 @@ class ViewController: UIViewController {
 
 extension ViewController: NumpadDelegate {
     func calculate() {
-        resultView
+        guard let result = resultView.content else { return () }
+        let mathExpression = NSExpression(format: result)
+        let mathValue = mathExpression.expressionValue(with: nil, context: nil) as? Int
+        resultView.content = "\(mathValue ?? 0)"
+        print(mathValue!)
     }
     
     func chooseNumber(number: String) {
